@@ -7,37 +7,24 @@ import javax.validation.constraints.NotEmpty;
 public class CreateUserDto {
 
     @NotEmpty
-    @ApiModelProperty(value = "${user.create.id}")
-    private Integer id;
-
-    @NotEmpty
     @ApiModelProperty(value = "${user.create.name}")
     private String name;
 
     @NotEmpty
-    @ApiModelProperty(value = "{$user.create.phone}")
+    @ApiModelProperty(value = "${user.create.phone}")
     private String phone;
 
     @NotEmpty
-    @ApiModelProperty(value = "{$user.create.email}")
+    @ApiModelProperty(value = "${user.create.email}")
     private String email;
 
     @NotEmpty
-    @ApiModelProperty(value = "{$user.create.password}")
+    @ApiModelProperty(value = "${user.create.password}")
     private String password;
 
     @NotEmpty
-    @ApiModelProperty(value = "{$user.create.address}")
+    @ApiModelProperty(value = "${user.create.address}")
     private String address;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public CreateUserDto setId(Integer id) {
-        this.id = id;
-        return this;
-    }
 
     public String getName() {
         return name;

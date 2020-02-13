@@ -4,8 +4,7 @@ import com.example.myorder.api.RestPath;
 import com.example.myorder.api.dtos.CreateRestaurantDto;
 import com.example.myorder.api.dtos.RestaurantResponseDto;
 import com.example.myorder.services.RestaurantService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
@@ -19,7 +18,6 @@ import javax.validation.Valid;
 @Api(tags = "Restaurantes")
 public class RestaurantController {
 
-
     @Autowired
     RestaurantService restaurantService;
 
@@ -30,8 +28,9 @@ public class RestaurantController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping()
-    public RestaurantResponseDto get(@RequestParam @Param("id") Integer id){
+    @GetMapping()
+    public RestaurantResponseDto get(@RequestParam @Param("id") Integer id) {
+
         return restaurantService.getById(id);
     }
 }

@@ -1,10 +1,15 @@
-package com.example.myorder.enties;
+package com.example.myorder.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "RESTAURANTE")
+public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,17 +24,11 @@ public class User {
     @Column(name = "EMAIL", nullable = false)
     private String email;
 
-    @Column(name = "PASSWORD", nullable = false)
-    private String password;
-
-    @Column(name = "ADDRESS", nullable = false)
-    private String address;
-
     public Integer getId() {
         return id;
     }
 
-    public User setId(Integer id) {
+    public Restaurant setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -38,7 +37,7 @@ public class User {
         return name;
     }
 
-    public User setName(String name) {
+    public Restaurant setName(String name) {
         this.name = name;
         return this;
     }
@@ -47,7 +46,7 @@ public class User {
         return phone;
     }
 
-    public User setPhone(String phone) {
+    public Restaurant setPhone(String phone) {
         this.phone = phone;
         return this;
     }
@@ -56,26 +55,8 @@ public class User {
         return email;
     }
 
-    public User setEmail(String email) {
+    public Restaurant setEmail(String email) {
         this.email = email;
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public User setPassword(String password) {
-        this.password = password;
-        return this;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public User setAddress(String address) {
-        this.address = address;
         return this;
     }
 }

@@ -1,22 +1,29 @@
 package com.example.myorder.api.dtos;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import javax.validation.constraints.NotEmpty;
+
 public class UserResponseDto {
-
+    @NotEmpty
+    @ApiModelProperty(value = "${user.create.id}")
     private Integer id;
+
+    @NotEmpty
+    @ApiModelProperty(value = "${user.create.name}")
     private String name;
-    private String email;
+
+    @NotEmpty
+    @ApiModelProperty(value = "${user.create.phone}")
     private String phone;
-    private String password;
+
+    @NotEmpty
+    @ApiModelProperty(value = "${user.create.email}")
+    private String email;
+
+    @NotEmpty
+    @ApiModelProperty(value = "${user.create.address}")
     private String address;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public UserResponseDto setId(Integer id) {
-        this.id = id;
-        return this;
-    }
 
     public String getName() {
         return name;
@@ -24,15 +31,6 @@ public class UserResponseDto {
 
     public UserResponseDto setName(String name) {
         this.name = name;
-        return this;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public UserResponseDto setEmail(String email) {
-        this.email = email;
         return this;
     }
 
@@ -45,12 +43,12 @@ public class UserResponseDto {
         return this;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public UserResponseDto setPassword(String password) {
-        this.password = password;
+    public UserResponseDto setEmail(String email) {
+        this.email = email;
         return this;
     }
 
